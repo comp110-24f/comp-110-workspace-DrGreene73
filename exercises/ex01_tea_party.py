@@ -14,23 +14,30 @@ def main_planner(guests: int) -> None:
     print("Cost: $" + str(cost(tea_bags(guests), treats(guests))))
 
 
+# Calls the functions below and prints the lines and specific values
+# based on the number of guests provided.
+
+
 def tea_bags(people: int) -> int:
     # This was fairly easy to me
     "A function providing the number of teabags for each person."
-    return people * 2
+    return people * 2  # returns the number of teabags needed per person.
 
 
 def treats(people: int) -> int:
     # Didn't realise int needed to be infront return statement.
     "The number of treats needed for the number of teas being drunk."
     return int(tea_bags(people=people) * 1.5)
+    # returns number of treats needed per number of teas being drunk.
 
 
 def cost(tea_count: int, treat_count: int) -> float:
     "Provides the total cost of the tea and treats."
     # Saw that variable assignments cant be used as we havent used them.
     return tea_count * 0.5 + treat_count * 0.75
+    # returns the total cost of the teabags and treats.
 
 
 if __name__ == "__main__":
     main_planner(guests=int(input("How many guests are attending your tea party? ")))
+# Makes the program runnable.
